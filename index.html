@@ -1,0 +1,162 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MindShot - Number Guessing Game</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+<main class="container">
+
+    <!-- HOME PAGE -->
+    <section id="home-page">
+        <header>
+            <div class="logo">🎯</div>
+            <h1>Mind<span>Shot</span></h1>
+            <p>Think smart. Hit the target.</p>
+        </header>
+
+        <p class="eyebrow">THE NUMBER CHALLENGE</p>
+        <h2>Ready to test your mind?</h2>
+        <p class="description">Choose your difficulty and find the lucky number!</p>
+
+        <h3 class="section-heading">Choose your difficulty</h3>
+
+        <div class="levels">
+            <button type="button" class="level-card" data-level="easy">
+                <span class="level-icon">🟢</span>
+                <span class="level-info"><strong>Easy</strong><small>Numbers 1–50</small></span>
+                <span class="arrow">→</span>
+            </button>
+
+            <button type="button" class="level-card" data-level="medium">
+                <span class="level-icon">🔵</span>
+                <span class="level-info"><strong>Medium</strong><small>Numbers 1–100</small></span>
+                <span class="arrow">→</span>
+            </button>
+
+            <button type="button" class="level-card" data-level="hard">
+                <span class="level-icon">🟠</span>
+                <span class="level-info"><strong>Hard</strong><small>Numbers 1–500</small></span>
+                <span class="arrow">→</span>
+            </button>
+
+            <button type="button" class="level-card" data-level="expert">
+                <span class="level-icon">🔴</span>
+                <span class="level-info"><strong>Expert</strong><small>Numbers 1–1000</small></span>
+                <span class="arrow">→</span>
+            </button>
+        </div>
+
+        <div class="best-box">
+            <h3>🏆 Best Scores</h3>
+            <div id="best-scores" class="scores"></div>
+        </div>
+
+        <footer>Made for curious minds ❤️</footer>
+    </section>
+
+    <!-- GAME PAGE -->
+    <section id="game-page" hidden>
+        <button type="button" id="back-button" class="back-button">
+            ← Back to Home
+        </button>
+
+        <header class="game-header">
+            <div class="logo">🎯</div>
+            <h1>Mind<span>Shot</span></h1>
+            <p id="difficulty-label">Easy Challenge</p>
+        </header>
+
+        <div class="game-box">
+            <p class="eyebrow center">GUESS THE LUCKY NUMBER</p>
+
+            <div class="range">
+                <span>1</span>
+                <span class="range-dash">—</span>
+                <span id="max-number">50</span>
+            </div>
+
+            <p id="range-instruction" class="instruction">
+                Enter a number to guess your lucky number!
+            </p>
+
+            <form id="guess-form">
+                <label for="guess-input">Your guess</label>
+                <input
+                    id="guess-input"
+                    type="number"
+                    min="1"
+                    max="50"
+                    step="1"
+                    placeholder="Enter a number..."
+                    required
+                >
+                <button class="shoot-button" type="submit" id="guess-button">
+                    Shoot! 🎯
+                </button>
+            </form>
+
+            <div id="feedback" class="feedback" aria-live="polite">
+                <div id="feedback-icon">💭</div>
+                <h3 id="feedback-title">Let's play!</h3>
+                <p id="feedback-text">Enter your first guess.</p>
+            </div>
+
+            <p id="attempts" class="attempts">Attempts: 0</p>
+
+            <div id="win-buttons" hidden>
+                <button type="button" id="play-again" class="shoot-button">
+                    Play Again ↻
+                </button>
+                <button type="button" id="choose-level" class="secondary-button">
+                    Choose Another Level
+                </button>
+            </div>
+        </div>
+
+        <footer>Believe in your aim ❤️</footer>
+    </section>
+
+    <!-- WINNING POPUP -->
+    <section id="win-overlay" hidden>
+        <div class="win-modal">
+            <div class="win-trophy">🏆</div>
+
+            <h2>YOU WON! 🎉</h2>
+
+            <p class="win-description">
+                Correct guess! Your lucky number was
+                <strong id="won-number">0</strong>.
+            </p>
+
+            <div id="win-message"></div>
+
+            <div class="win-actions">
+                <button
+                    type="button"
+                    id="celebration-play-again"
+                    class="shoot-button"
+                >
+                    Play Again ↻
+                </button>
+
+                <button
+                    type="button"
+                    id="win-home-button"
+                    class="secondary-button"
+                >
+                    Choose Another Level
+                </button>
+            </div>
+
+            <p class="win-footer">Amazing job! Keep aiming! ❤️</p>
+        </div>
+    </section>
+
+</main>
+</body>
+</html>
